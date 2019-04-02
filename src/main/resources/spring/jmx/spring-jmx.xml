@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--jmx相关配置-->
+    <bean id="annotationMBeanExporter" class="org.springframework.jmx.export.annotation.AnnotationMBeanExporter"
+          p:autodetect="true"
+          p:assembler-ref="assembler"
+          p:namingStrategy-ref="namingStrategy" />
+
+    <bean id="assembler" class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler"
+        p:attributeSource-ref="attributeSource"/>
+
+    <bean id="namingStrategy" class="org.springframework.jmx.export.naming.MetadataNamingStrategy"
+          p:attributeSource-ref="attributeSource"/>
+
+    <bean id="attributeSource" class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource"/>
+</beans>
