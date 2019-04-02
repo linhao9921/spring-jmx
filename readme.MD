@@ -103,7 +103,7 @@ public class JmxTest {
 从上面配置可以看出,可以通过访问：http://{host}:{port}/jmx/ 地址进行查看。
 
 
-##### 2.1 通过jconsole.exe查看
+##### 2.2 通过jconsole.exe查看
 
 如果本地是win系统，并安装了java,可以通过cmd后输入jconsole.exe回车，弹出【java监控和管理控制台】，连接后，点击MBean可以看到对应的jmx接口。
 
